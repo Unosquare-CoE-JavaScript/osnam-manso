@@ -1,0 +1,1 @@
+# osnam-manso
