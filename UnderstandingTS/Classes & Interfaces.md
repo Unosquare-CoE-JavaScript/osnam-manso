@@ -1,8 +1,8 @@
 # What are Classes
 
-<p align="left">
-    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F411e3f12-05d8-475e-b4d2-fa374426d6cb%2FScreen_Shot_2021-11-02_at_17.23.42.png?id=7e4b214b-c786-4a2b-880a-4f5857e0f239&table=block&spaceId=39c865bd-d151-4ddd-bfd8-f2239f411ed9&width=1910&userId=cc2028a7-e873-4ae8-988c-88e12db2775f&cache=v2"/>
-</p>
+- Blueprints for objects (theoretical definition)
+- Define how objects look like, which prperties and methods they have.
+- Classes make creation of multiple, similar objects much easier.
 
 # Creating a First Class
 
