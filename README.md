@@ -14,4 +14,4 @@
 
 #### 1. [You don't know JS Yet: Get Started.](https://github.com/Unosquare-CoE-JavaScript/osnam-manso/tree/main/YouDontKnowJSYet_GetStarted)
 
-#### 2. [Understanding TypeScript.](https://github.com/Unosquare-CoE-JavaScript/osnam-manso/tree/main/UnderstandingTS)
+#### 2. [Understanding TypeScript.](https://github.com/tomosnam/osnam-manso/tree/main/UnderstandingTS)
