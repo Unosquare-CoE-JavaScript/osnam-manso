@@ -390,3 +390,90 @@ class AccountingDepartament extends Department {
 }
 const accounting = AccountingDepartament.getInstance();
 ```
+
+# Using Interfaces with Classes
+
+- Define a structure of an object. Share functionalites between diferents classes.
+
+```jsx
+interface Person {
+  // Define a structure of an object. Share functionalites between diferents classes
+  name: string;
+  age: number;
+  greet(phrase: string): void;
+}
+```
+
+# Readonly Interface Properties
+
+```jsx
+interface Greetable {
+  // Define a structure of an object
+ readonly name: string;
+  greet(phrase: string): void;
+}
+
+```
+
+# Extending Interfaces
+
+```jsx
+interface Named {
+  readonly name: string;
+}
+
+interface Greetable extends Named, AnotherInterface {
+  // readonly name: string;
+  greet(phrase: string): void;
+}
+```
+
+# Interfaces as Funcion Types
+
+#Optional Parameters & Properties
+
+```jsx
+// type AddFn = (a: number, b: number) => number;
+
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+```
+
+# Optional Parameters & Properties
+
+```jsx
+interface Named {
+  readonly name: string;
+  outputName?: string;
+}
+
+interface Greetable extends Named {
+  // readonly name: string;
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name: string;
+  outputName?: string;
+
+  constructor(n: string, on?: string) {
+    if (on) {
+      this.outputName = on;
+    }
+    this.name = n;
+  }
+  greet(phrase: string) {
+    if (this.outputName) {
+      console.log(phrase + ' ' + this.outputName);
+    }
+    console.log('Hi!');
+  }
+}
+```
