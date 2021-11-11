@@ -71,5 +71,3 @@ age: 30
 }
 const {name: userName, age} = person
 ```
-
-# How Code Gets Compilied
