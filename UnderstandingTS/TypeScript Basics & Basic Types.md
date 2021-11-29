@@ -3,7 +3,7 @@
 The core primitive types in TypeScript are all lowercase!
 
 <p align="left">
-<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7957ca77-c09d-446f-8dc4-52680ed930f5%2FScreen_Shot_2021-10-29_at_20.37.10.png?id=67ec4942-9cae-44e8-9f05-b48939346504&table=block&spaceId=39c865bd-d151-4ddd-bfd8-f2239f411ed9&width=2000&userId=cc2028a7-e873-4ae8-988c-88e12db2775f&cache=v2" />
+<img src="../img/types-ts.png" />
 </p>
 
 # Type Assignment & Type Inference
@@ -14,7 +14,7 @@ number = 7;
 const number1 = 5;
 const number2 = 2.8;
 const printResult = true;
-const resultPhrase = "Result is: ";
+const resultPhrase = 'Result is: ';
 const result = add(number1, number2, printResult, resultPhrase);
 ```
 
@@ -26,13 +26,13 @@ const person: {
   name: string,
   age: number,
 } = {
-  name: "Maximilian",
+  name: 'Maximilian',
   age: 30,
 };
 
 // best syntax
 const person2 = {
-  name: "Maximilian2",
+  name: 'Maximilian2',
   age: 31,
 };
 console.log(person2.name);
@@ -73,7 +73,7 @@ const person = {
 
 ```jsx
 let favoriteActivities: any[];
-favoriteActivities = ["Sports"];
+favoriteActivities = ['Sports'];
 ```
 
 # Union Types
@@ -81,7 +81,7 @@ favoriteActivities = ["Sports"];
 ```jsx
 function combine(input1: number | string, input2: number | string) {
   let result;
-  if (typeof input1 === "number" && typeof input2 === "number")
+  if (typeof input1 === 'number' && typeof input2 === 'number')
     result = input1 + input2;
   else result = input1.toString() + input2.toString();
   return result;
@@ -90,7 +90,7 @@ function combine(input1: number | string, input2: number | string) {
 const combineAges = combine(30, 26);
 console.log(combineAges);
 
-const combineNames = combine("Max", "Anna");
+const combineNames = combine('Max', 'Anna');
 console.log(combineAges);
 ```
 
@@ -100,22 +100,22 @@ console.log(combineAges);
 function combine(
   input1: number | string,
   input2: number | string,
-  resultConversion: "as-number" | "as-text"
+  resultConversion: 'as-number' | 'as-text'
 ) {
   let result;
   if (
-    (typeof input1 === "number" && typeof input2 === "number") ||
-    resultConversion === "as-number"
+    (typeof input1 === 'number' && typeof input2 === 'number') ||
+    resultConversion === 'as-number'
   )
     result = +input1 + +input2;
   else result = input1.toString() + input2.toString();
   return result;
 }
 
-const combineAges = combine(30, 26, "as-number");
+const combineAges = combine(30, 26, 'as-number');
 console.log(combineAges);
 
-const combineNames = combine("Max", "Anna", "as-text");
+const combineNames = combine('Max', 'Anna', 'as-text');
 console.log(combineAges);
 ```
 
@@ -123,7 +123,7 @@ console.log(combineAges);
 
 ```jsx
 type Combinable = number | string;
-type ConversionDescriptor = "as-number" | "as-text";
+type ConversionDescriptor = 'as-number' | 'as-text';
 
 function combine(
   input1: Combinable,
@@ -132,18 +132,18 @@ function combine(
 ) {
   let result;
   if (
-    (typeof input1 === "number" && typeof input2 === "number") ||
-    resultConversion === "as-number"
+    (typeof input1 === 'number' && typeof input2 === 'number') ||
+    resultConversion === 'as-number'
   )
     result = +input1 + +input2;
   else result = input1.toString() + input2.toString();
   return result;
 }
 
-const combineAges = combine(30, 26, "as-number");
+const combineAges = combine(30, 26, 'as-number');
 console.log(combineAges);
 
-const combineNames = combine("Max", "Anna", "as-text");
+const combineNames = combine('Max', 'Anna', 'as-text');
 console.log(combineAges);
 ```
 
@@ -155,7 +155,7 @@ For example:
 
 ```jsx
 type User = { name: string, age: number };
-const u1: User = { name: "Max", age: 30 }; // this works!
+const u1: User = { name: 'Max', age: 30 }; // this works!
 ```
 
 This allows you to avoid unnecessary repetition and manage types centrally.
@@ -164,7 +164,7 @@ For example, you can simplify this code:
 
 ```jsx
 function greet(user: { name: string, age: number }) {
-  console.log("Hi, I am " + user.name);
+  console.log('Hi, I am ' + user.name);
 }
 
 function isOlder(user: { name: string, age: number }, checkAge: number) {
@@ -180,15 +180,15 @@ function add(n1: number, n2: number): number {
 }
 
 function printResult(num: number): void {
-  console.log("Result" + num);
+  console.log('Result' + num);
 }
 
 function printResult_2(num: number): void {
-  console.log("Result" + num);
+  console.log('Result' + num);
   return;
 }
 function printResult_3(num: number): undefined {
-  console.log("Result" + num);
+  console.log('Result' + num);
   return;
 }
 
@@ -203,7 +203,7 @@ function add(n1: number, n2: number): number {
 }
 
 function printResult(num: number): void {
-  console.log("Result" + num);
+  console.log('Result' + num);
 }
 
 printResult(add(5, 12));
@@ -235,11 +235,11 @@ addAndHandle(10, 20, (result) => {
 let userInput: unknown; // better that any
 let userName: string;
 userInput = 5;
-userInput = "Max";
+userInput = 'Max';
 userName = userInput; // type 'unknown is not assignable to type 'string'
 
 // You can this and works.
-if (typeof userInput === "string") {
+if (typeof userInput === 'string') {
   userName = userInput;
 }
 ```
@@ -252,5 +252,5 @@ function generateError(message: string, code: number) {
   //   while (true) {}
 }
 
-const result = generateError("An error occurred!", 500);
+const result = generateError('An error occurred!', 500);
 ```
